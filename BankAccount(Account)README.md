@@ -6,7 +6,7 @@
 
 
   
-    public class Account{
+  	public class Account{
 		private int id;
 		private double balance, annualInterestRate, monthlyInterestRate, withdraw, deposit;
 		
@@ -14,86 +14,67 @@
 		
 		public Account( ){
 
-
 		}
-
 		public Account( int id, double initialBalance){
 			this.id = id;
 			balance = initialBalance;
-			
 			
 		}
 		
 		//assessors
 		public int getId( ){
 			return id;
-			
 		}
 		
 		public double getBalance( ){
 			return balance;
-			
 		}
 		
 		public double getAnnualInterestRate( ){
 			return annualInterestRate;
-			
 		}
 				
 		public java.util.Date getDateCreated( ){
 			return dateCreated;
-			
 		}
 	
 		public double getMonthlyInterestRate( ){
 			return annualInterestRate / 12;
-		
 		}
 		
 		public double getwithdraw( ){
 			return withdraw;
-			
 		}
 		
 		public double getdeposit( ){
 			return deposit;
-			
 		}
 		
 		//mutator
 		public void setId( int newId){
 			id = newId;		
-			
 		}
 		
 		public void setBalance( double newBalance ){
 
 			balance = newBalance;
-			
 		}		
 		
 		public  void setAnnualInterestRate( double newAnnualInterestRate){
 			annualInterestRate = newAnnualInterestRate;
-		
 		}
 		
 		public  void  setMonthlyInterestRate (double newMonthlyInterestRate){
  			monthlyInterestRate = newMonthlyInterestRate;
-			
-			
 		}
 		
 		public void setWithdraw (double newWithdraw){
 			withdraw = newWithdraw;
-			
 		}
 		
 		public void setDeposit( double newDeposit){
 			deposit = newDeposit;
-			
-				
 	}
-		
 }	
 		
 
@@ -105,7 +86,9 @@
 // Last modified: 04/07/2015 
 // Description: A checking object for modeling banking 
 
-public class Checking extends Account {
+
+		
+	public class Checking extends Account {
 	
 	public Checking( ){
 		
@@ -132,36 +115,6 @@ public class Checking extends Account {
 }
 
 
-//Programmer: dgoodwin4
-//Filename: CertificateOfDeposit.java 
-//Last modified: 04/30/15 
-//Description: Design a class named CertificateOfDeposit that extends the Savings class.
- 
-package com.gsu.cis.bankaccount;
-
-public class CertificateOfDeposit extends Savings {
-	
-	private double penalty = 1.5000;
-	
-	public CertificateOfDeposit( double interestRate ){
-		super( interestRate );		
-	}
-	
-	public CertificateOfDeposit( double interestRate, double balance, String accountName ){
-		super( interestRate );
-		this.setBalance( balance );
-		this.setName( accountName );
-	}
-	
-	public void withdraw( double amount ) throws Exception{
-		super.withdraw( amount + (amount*penalty) );
-	}
-	
-	public String toString( ){
-		return super.toString( );
-	}
-	
-}
 
 
 // Programmer: Dgoodwin4 
@@ -170,6 +123,7 @@ public class CertificateOfDeposit extends Savings {
 // Description: A savings object to model banking 
 public class Savings extends Account {
 	
+		
 	private double dInterestRate = 0;
 	
 	public Savings( double interestRate ){
@@ -194,15 +148,48 @@ public class Savings extends Account {
 
 
 //Programmer: dgoodwin4
+//Filename: CertificateOfDeposit.java 
+//Last modified: 04/30/15 
+//Description: Design a class named CertificateOfDeposit that extends the Savings class.
+ 
+		
+	package com.gsu.cis.bankaccount;
+
+	public class CertificateOfDeposit extends Savings {
+	
+	private double penalty = 1.5000;
+	
+	public CertificateOfDeposit( double interestRate ){
+		super( interestRate );		
+	}
+	
+	public CertificateOfDeposit( double interestRate, double balance, String accountName ){
+		super( interestRate );
+		this.setBalance( balance );
+		this.setName( accountName );
+	}
+	
+	public void withdraw( double amount ) throws Exception{
+		super.withdraw( amount + (amount*penalty) );
+	}
+	
+	public String toString( ){
+		return super.toString( );
+	}
+	
+}
+
+//Programmer: dgoodwin4
 //Filename: MoneyMarket.java 
 //Last modified: 04/30/2015 
 //Description: Design a class named MoneyMarket class that extends the Checking 
 class and contains constructor for balance and account name, withdraw method and toString method.
  
-package com.gsu.cis.bankaccount;
+		
+	package com.gsu.cis.bankaccount;
 
 
-public class MoneyMarket extends Checking {
+	public class MoneyMarket extends Checking {
 	
 	// A private double data field named penalty for the account (default 0.2000). 
 	private double penalty = 0.2000;
@@ -246,10 +233,11 @@ public class MoneyMarket extends Checking {
 //Last modified: 04/14/2015 
 //Description: Reads the input file retrieving each number separated by a space into a int[] variable and returns that int[] array.
 
-import java.util.*;
-import java.io.*;
+		
+	import java.util.*;
+	import java.io.*;
 
-public class TextFile {
+	public class TextFile {
 
 	public static int[] readNumbers( String filename ) throws IOException {
 		
@@ -288,9 +276,10 @@ public class TextFile {
 //Last modified: 04/30/2015 
 //Description: a short description of what the program does
 
-package com.gsu.cis.bankaccount;
+		
+	package com.gsu.cis.bankaccount;
 
-public class Transaction {
+	public class Transaction {
 	private String accountName;
 	private String toAccountName;
 	private String fromAccountName;
@@ -444,13 +433,14 @@ public class Transaction {
 //Last modified: 04/14/2015 
 //Description: a short description of what the program does
 
-package com.gsu.cis.project;
+		
+	package com.gsu.cis.project;
 
-import java.util.*;
-import com.gsu.cis.bankaccount.*;
+	import java.util.*;
+	import com.gsu.cis.bankaccount.*;
 
-public class SemesterProject
-{
+	public class SemesterProject
+	{
 	/** Attributes */
 	private static Map<String, Account> theMap = new HashMap<String, Account>( );
 
@@ -480,13 +470,13 @@ public class SemesterProject
 				Transaction transaction = new Transaction( line.split( "\\|" ) );
 				
 				switch ( transaction.getFunction() ){
-				case 1: newAccount( transaction.getAccountType(), transaction.getAmount(), transaction.getAccountName() );
+				case 1: newAccount( transaction.getAccountType(), transaction.getAmount(), 						transaction.getAccountName() );
 				break;
-				case 2: deposit( transaction.getAccountType(), transaction.getAmount(), transaction.getAccountName() );
+				case 2: deposit( transaction.getAccountType(), transaction.getAmount(), 						transaction.getAccountName() );
 				break;
-				case 3: withdraw( transaction.getAccountType(), transaction.getAmount(), transaction.getAccountName());
+				case 3: withdraw( transaction.getAccountType(), transaction.getAmount(), 						transaction.getAccountName());
 				break;
-				case 4: transfer( transaction.getAmount(), transaction.getFromAccount(), transaction.getToAccount() );
+				case 4: transfer( transaction.getAmount(), transaction.getFromAccount(), 						transaction.getToAccount() );
 				break;
 				case 5: printMap( outputFilename );
 				break;
